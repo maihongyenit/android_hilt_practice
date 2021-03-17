@@ -4,11 +4,14 @@ import androidx.lifecycle.*
 import com.example.hilt_practice.domain.BlogRepo
 import com.example.hilt_practice.domain.models.Blog
 import com.example.hilt_practice.domain.state.DataState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val blogRepo: BlogRepo,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {

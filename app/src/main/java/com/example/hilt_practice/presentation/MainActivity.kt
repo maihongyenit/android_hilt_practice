@@ -5,9 +5,13 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.hilt_practice.R
 import com.example.hilt_practice.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    @Inject
     lateinit var fragmentFactory: MainFragmentFactory
 
     private lateinit var databinding: ActivityMainBinding

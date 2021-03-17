@@ -11,7 +11,9 @@ import com.example.hilt_practice.R
 import com.example.hilt_practice.databinding.FragmentMainBinding
 import com.example.hilt_practice.domain.models.Blog
 import com.example.hilt_practice.domain.state.DataState
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private lateinit var databinding: FragmentMainBinding
@@ -21,7 +23,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         databinding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
         databinding.lifecycleOwner = viewLifecycleOwner
         return databinding.root
